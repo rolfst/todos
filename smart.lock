@@ -1,0 +1,32 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "cordova": {},
+      "GroundDB": {},
+      "grounddb": {}
+    },
+    "packages": {
+      "cordova": {
+        "git": "https://github.com/raix/Meteor-cordova.git",
+        "tag": "v0.0.8",
+        "commit": "4eff8b9a853673f5f4b450a0102e78f554836da4"
+      },
+      "GroundDB": {
+        "git": "https://github.com/raix/Meteor-GroundDB.git",
+        "tag": "v0.0.18",
+        "commit": "f237b16a1e803c3fc7a3bc6f03e776ac027ffef6"
+      },
+      "grounddb": {
+        "git": "https://github.com/GroundMeteor/Meteor-GroundDB.git",
+        "tag": "v0.0.21",
+        "commit": "7132b9dbb1dc681fd940a31bc586de059b3871bb"
+      },
+      "ejson-minimax": {
+        "git": "https://github.com/GroundMeteor/ejson-minimax.git",
+        "branch": "master",
+        "commit": "87e77a2e1704f0ae2d2a7b914030b898519f7964"
+      }
+    }
+  }
+}
