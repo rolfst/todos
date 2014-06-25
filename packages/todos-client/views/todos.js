@@ -1,7 +1,12 @@
 ////////// Todos //////////
 
+
+var todosLoaded = function () {
+  return Offline.subscriptionLoaded("todos");
+};
+
 Template.todos.loading = function () {
-  return todosHandle && !todosHandle.ready();
+  return !todosLoaded();
 };
 
 Template.todos.any_list_selected = function () {
@@ -116,13 +121,4 @@ Template.todo_item.events(okCancelEvents(
     }
   }));
 
-var todosHandle = null;
-// Always be subscribed to the todos for the selected list.
-Deps.autorun(function () {
-  var list_id = Session.get('list_id');
-  if (list_id)
-    todosHandle = Meteor.subscribe('todos', list_id);
-  else
-    todosHandle = null;
-});
 

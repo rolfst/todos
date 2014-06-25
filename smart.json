@@ -1,7 +1,6 @@
 {
   "packages": {
-    "cordova": {},
-    "GroundDB": {},
-    "grounddb": {}
+    "offline-data": {},
+    "cordova": {}
   }
 }

@@ -1,8 +1,8 @@
 // Define Minimongo collections to match server/publish.js.
-todos.client.Lists = new Meteor.Collection("lists");
-todos.client.Todos = new Meteor.Collection("todos");
-GroundDB(todos.client.Lists);
-GroundDB(todos.client.Todos);
+todos.client.Lists = new Offline.Collection("lists");
+todos.client.Todos = new Offline.Collection("todos");
+Offline.subscriptions(['lists'
+, 'todos']);
 
 isOffline = function() {
     if (navigator.connection){

@@ -12,7 +12,6 @@ insecure
 todos
 todos-collection
 todos-client
-cordova
 appcache
-ejson-minimax
-grounddb
+cordova
+offline-data

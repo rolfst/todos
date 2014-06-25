@@ -5,7 +5,7 @@ Package.describe({
 Package.on_use(function (api, where) {
     var cs = ['client', 'server'];
   api.use('todos', cs);
-  api.use('grounddb', 'client');
+  api.use('offline-data', 'client');
   api.add_files('namespaces.js', 'client');
     api.use('standard-app-packages', cs);
   api.add_files('lib/init-session.js', 'client');

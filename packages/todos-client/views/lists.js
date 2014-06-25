@@ -1,10 +1,17 @@
-// Subscribe to 'lists' collection on startup.
 // Select a list once data has arrived.
-var listsHandle = Meteor.subscribe('lists', function () {
-  if (!Session.get('list_id')) {
+// OFFLINE: check the subscription loaded status to find out if it's
+// ready.
+
+var listsLoaded = function () {
+  return Offline.subscriptionLoaded("lists");
+};
+Deps.autorun(function (computation) {
+  if ((!Session.get('list_id')) && listsLoaded()) {
     var list = todos.client.Lists.findOne({}, {sort: {name: 1}});
-    if (list)
+    if (list) {
       Router.setList(list._id);
+      computation.stop();
+    }
   }
 });
 
@@ -12,7 +19,7 @@ var listsHandle = Meteor.subscribe('lists', function () {
 ////////// Lists //////////
 
 Template.lists.loading = function () {
-  return !listsHandle.ready() || isOffline();
+  return !listsLoaded() || isOffline();
 };
 
 Template.lists.lists = function () {
